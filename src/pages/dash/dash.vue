@@ -1,7 +1,7 @@
 <template>
     <div>
         <site
-            class="margin-bottom-md"
+            :style="{marginBottom: styles['margin-md']}"
             v-for="site in sites"
             :site="site"
         >
@@ -12,13 +12,16 @@
 <script>
 
     import yaml from 'js-yaml'
+    
     import site from '../../components/site/site.vue'
+    import styles from '../../styles/variables'
 
     export default {
         components: { site },
         data: function() {
             return {
-                sites: []
+                sites: [],
+                styles
             }
         },
         created() {

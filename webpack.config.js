@@ -13,6 +13,14 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
+        options: {
+          postcss: [
+            require('postcss-simple-vars')
+              ({ variables: require('./src/styles/variables')}),
+            require('postcss-font-magician')(),
+            require('postcss-if-media')(),
+          ]
+        }
       },
       {
         test: /\.js$/,
