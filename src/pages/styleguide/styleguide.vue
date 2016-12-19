@@ -21,11 +21,10 @@
 <script>
 
     import _ from 'lodash'
-    
+    import path from 'path'
+
     import icon from '../../components/icon/icon.vue'
-
     import styles from '../../styles/variables'
-
 
     export default {
         
@@ -40,24 +39,34 @@
         },
 
         mounted: function() {
-            this.$http.get('./svg/main.svg')
-            .then(res => {
-
-                var reader = new FileReader();
-                var parser = new DOMParser();
-
-                reader.readAsText(res.body)
-                
-                reader.onload = () => {
-                    var doc = parser.parseFromString(reader.result, 'image/svg+xml')
-                    var symbols = doc.querySelectorAll('symbol')
-                    for (var i = 0; i < symbols.length; ++i) {
-                        this.icons.push(symbols[i].id)
-                    }
-                }
-
-            })
+            this.icons = require
+                .context('../../svg', false, /\.svg$/)
+                .keys()
+                .map(key => path.basename(key, '.svg'))
         }
     }
 
 </script>
+<style>
+    .styleguide__row {
+        display: flex;
+        align-items: center;
+        margin-bottom: $margin-md;
+        height: 4rem;
+    }
+    .styleguide__title {
+        font: $font-text-xl;
+        margin-bottom: $margin-md;
+        color: $gray-dark;
+    }
+    .styleguide__icon {
+        width: 3rem;
+        display: flex;
+        align-items: center;
+    }
+    .styleguide__code {
+        color: $gray;
+        font: $font-code-md;
+        margin-left: $margin-md;
+    }
+</style>
