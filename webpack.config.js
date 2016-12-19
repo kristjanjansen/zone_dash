@@ -19,7 +19,6 @@ module.exports = {
               ({ variables: require('./src/styles/variables')}),
             require('postcss-font-magician')(),
             require('postcss-if-media')(),
-          ]
         }
       },
       {
