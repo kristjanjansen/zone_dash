@@ -15,10 +15,13 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           postcss: [
-            require('postcss-simple-vars')
-              ({ variables: require('./src/styles/variables')}),
+            require('postcss-simple-vars')({
+              variables: require('./src/style/style').flattened,
+              silent: false
+            }),
             require('postcss-font-magician')(),
-            require('postcss-if-media')(),
+            require('postcss-if-media')()
+          ]
         }
       },
       {

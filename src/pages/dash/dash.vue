@@ -16,7 +16,7 @@
     import yaml from 'js-yaml'
     
     import site from '../../components/site/site.vue'
-    import style from '../../style'
+    import style from '../../style/style'
 
     export default {
         components: { site },

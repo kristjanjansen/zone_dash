@@ -24,7 +24,7 @@
     import path from 'path'
 
     import icon from '../../components/icon/icon.vue'
-    import styles from '../../styles/variables'
+    import style from '../../style/style'
 
     export default {
         
@@ -34,7 +34,7 @@
             return {
                 icons: [],
                 sizeIndex: 1,
-                sizeKeys: _.keys(styles.iconSizes),
+                sizeKeys: _.keys(style.icon),
             }
         },
 
@@ -57,7 +57,7 @@
     .styleguide__title {
         font: $font-text-xl;
         margin-bottom: $margin-md;
-        color: $gray-dark;
+        color: $color-gray-dark;
     }
     .styleguide__icon {
         width: 3rem;
@@ -65,7 +65,7 @@
         align-items: center;
     }
     .styleguide__code {
-        color: $gray;
+        color: $color-gray;
         font: $font-code-md;
         margin-left: $margin-md;
     }

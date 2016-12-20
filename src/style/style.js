@@ -59,7 +59,8 @@ style.icon = {
 // Borders
 
 style.border = {
-    md: '1px solid gray'
+    sm: '1px solid #aaa',
+    md: '1px solid #888'
 }
 
 style.borderRadius = {
@@ -72,7 +73,7 @@ flattened = {}
 
 _.each(style, (group, groupKey) => {
     _.each(group, (value, key) => {
-        flattened[_.kebabCase(groupKey) + '-' + key] = value
+        flattened[_.kebabCase(groupKey + '-' + key)] = value
     })
 })
 
