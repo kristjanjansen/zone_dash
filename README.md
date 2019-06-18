@@ -1,11 +1,15 @@
-## Install and development
+## zone_dash
+
+Zone.ee dashboard prototype
+
+### Install and development
 
 ```
 yarn
 npm run dev
 ```
 
-## Production
+### Production
 
 ```
 npm install
